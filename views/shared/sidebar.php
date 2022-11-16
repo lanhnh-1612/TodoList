@@ -8,7 +8,7 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="<?php echo BASE_URL; ?>/calendar/index">
                 <i class="metismenu-icon fa fa-calendar"></i>
                 Calendar
             </a>
