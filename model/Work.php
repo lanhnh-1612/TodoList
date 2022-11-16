@@ -52,6 +52,20 @@ class Work extends Model
     }
 
     /**
+     * get all works
+     * @param array $data
+     * @return array 
+     */
+    public function allWork()
+    {
+        $query = "SELECT id,name, DATE_FORMAT(starting_date,'%Y-%m-%d') AS starting_date, DATEDIFF(starting_date, ending_date) AS days_difference,
+        DATE_FORMAT(ending_date,'%Y-%m-%d') AS ending_date,status FROM " . $this->tableName . " ORDER BY 'starting_date' DESC";
+       
+       $result =  $this->query($query);
+        return $result;
+    }
+
+    /**
      * add work
      * @param array $data
      * @return bool 
